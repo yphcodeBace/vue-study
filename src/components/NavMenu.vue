@@ -10,7 +10,10 @@
         background-color="#545c64"
         text-color="#fff"
         active-text-color="#ffd04b">
-
+        <el-menu-item index="Index">
+          <i class="el-icon-menu"></i>
+          <span slot="title">首页</span>
+        </el-menu-item>
         <el-submenu v-for="item in menu" :index="item.id" :key="item.id">
           <template slot="title">
             <span><i :class="item.classname"></i>{{item.name}}</span>

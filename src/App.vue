@@ -6,13 +6,18 @@
         <vheader />
       </el-header>
 
-      <el-container>
-        <el-aside width="200px">
+      <el-container class="content">
+        <el-aside class="aside">
           <navmenu></navmenu>
         </el-aside>
 
-        <el-main>
+        <el-main class="main">
           <router-view></router-view>
+          <el-footer>
+            <p>TEL : 010-85394331</p>
+            <p>Email : infinistudio@foxmail.com</p>
+            <p>weibo : @InfiniStudio</p>
+          </el-footer>
         </el-main>
 
       </el-container>
@@ -50,8 +55,33 @@
 
 <style>
   .header {
-    background-color: #409EFF;
+    background-color: #39B482;
     color: #fff;
     line-height: 60px;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+  }
+  .content{
+    margin-top: 60px;
+    margin-bottom: 120px;
+  }
+  .aside{
+    position: fixed;
+    width: 200px !important;
+  }
+  .main{
+    margin-left: 200px;
+  }
+  .el-footer {
+    position: fixed;
+    z-index: 99;
+    width: calc(100% - 240px);
+    bottom: 0;
+    background-color: #F2F2F2;
+    color: #333;
+    text-align: center;
+    height: 120px !important;
+    /*line-height: 80px;*/
   }
 </style>

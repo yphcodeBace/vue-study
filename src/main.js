@@ -7,6 +7,7 @@ import NormailizeCss from 'normalize.css'
 import less from 'less'
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
+import echarts from 'echarts'
 
 import App from './App'
 import router from './router'
@@ -14,6 +15,7 @@ import store from './vuex/store'
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
+Vue.prototype.$echarts = echarts
 
 Vue.use(Vuex)
 Vue.use(ElementUI)
