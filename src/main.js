@@ -13,6 +13,9 @@ import App from './App'
 import router from './router'
 import store from './vuex/store'
 
+//自適應方案核心
+// import 'lib-flexible'
+
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 Vue.prototype.$echarts = echarts

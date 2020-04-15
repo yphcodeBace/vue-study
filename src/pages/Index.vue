@@ -29,13 +29,6 @@
           </div>
         </el-col>
       </el-row>
-<!--      <el-row :gutter="20">-->
-<!--        <el-col :span="24">-->
-<!--          <div id="pieChart" class="grid-content bg-purple chart">-->
-
-<!--          </div>-->
-<!--        </el-col>-->
-<!--      </el-row>-->
     </div>
 </template>
 
@@ -154,13 +147,10 @@
         //渲染图表
         this.drawCharts('barChart',this.barOption);
         this.drawCharts('lineChart',this.lineOption);
-        // this.drawCharts('pieChart',this.pieOption);
         //实现自适应
         this.resizeFun = ()=>{
-          // let echarts = require('echarts');
           this.$echarts.init(document.getElementById('barChart')).resize(); //这里的myChart就是要自适应的图表容器Id
           this.$echarts.init(document.getElementById('lineChart')).resize();
-          // this.$echarts.init(document.getElementById('pieChart')).resize();
         }
         window.addEventListener('resize',this.resizeFun)
       },
