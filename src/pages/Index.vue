@@ -161,9 +161,13 @@
       },
       methods: {
         drawCharts (id,options) {
-          let echarts = require('echarts');
-          let myChart = echarts.init(document.getElementById(id));
-          myChart.setOption(options);
+          //echartjs执行太快，css的百分比还没来得及反应，js就已经执行完了，所以把百分比转成了px。
+          //解决方法：将初始化代码放在setTimeout中
+          setTimeout(function(){
+            let echarts = require('echarts');
+            let myChart = echarts.init(document.getElementById(id));
+            myChart.setOption(options);
+          },0)
         }
       }
     }
@@ -187,6 +191,7 @@
     border: 1px solid darkgrey;
     background: white;
     height: 500px;
+    // width: 100%;
   }
 
 </style>
