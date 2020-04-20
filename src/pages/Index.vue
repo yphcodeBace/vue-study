@@ -19,11 +19,15 @@
       </el-row>
       <el-row :gutter="20">
         <el-col :span="12">
+          <button @click="change1('change')" class="btn">change1</button>
+          <button @click="change1('init')" class="btn">init1</button>
           <div id="barChart" class="grid-content bg-purple chart">
 
           </div>
         </el-col>
         <el-col :span="12">
+          <button @click="change2('change')" class="btn">change2</button>
+          <button @click="change2('init')" class="btn">init2</button>
           <div id="lineChart" class="grid-content bg-purple chart">
 
           </div>
@@ -68,79 +72,6 @@
               areaStyle: {}
             }]
           },
-          pieOption:{
-            title: {
-              text: '南丁格尔玫瑰图',
-              subtext: '纯属虚构',
-              left: 'center'
-            },
-            tooltip: {
-              trigger: 'item',
-              formatter: '{a} <br/>{b} : {c} ({d}%)'
-            },
-            legend: {
-              left: 'center',
-              top: 'bottom',
-              data: ['rose1', 'rose2', 'rose3', 'rose4', 'rose5', 'rose6', 'rose7', 'rose8']
-            },
-            toolbox: {
-              show: true,
-              feature: {
-                mark: {show: true},
-                dataView: {show: true, readOnly: false},
-                magicType: {
-                  show: true,
-                  type: ['pie', 'funnel']
-                },
-                restore: {show: true},
-                saveAsImage: {show: true}
-              }
-            },
-            series: [
-              {
-                name: '半径模式',
-                type: 'pie',
-                radius: [20, 110],
-                center: ['25%', '50%'],
-                roseType: 'radius',
-                label: {
-                  show: false
-                },
-                emphasis: {
-                  label: {
-                    show: true
-                  }
-                },
-                data: [
-                  {value: 10, name: 'rose1'},
-                  {value: 5, name: 'rose2'},
-                  {value: 15, name: 'rose3'},
-                  {value: 25, name: 'rose4'},
-                  {value: 20, name: 'rose5'},
-                  {value: 35, name: 'rose6'},
-                  {value: 30, name: 'rose7'},
-                  {value: 40, name: 'rose8'}
-                ]
-              },
-              {
-                name: '面积模式',
-                type: 'pie',
-                radius: [30, 110],
-                center: ['75%', '50%'],
-                roseType: 'area',
-                data: [
-                  {value: 10, name: 'rose1'},
-                  {value: 5, name: 'rose2'},
-                  {value: 15, name: 'rose3'},
-                  {value: 25, name: 'rose4'},
-                  {value: 20, name: 'rose5'},
-                  {value: 35, name: 'rose6'},
-                  {value: 30, name: 'rose7'},
-                  {value: 40, name: 'rose8'}
-                ]
-              }
-            ]
-          }
         }
       },
       mounted () {
@@ -168,6 +99,49 @@
             let myChart = echarts.init(document.getElementById(id));
             myChart.setOption(options);
           },0)
+        },
+        setOption(id,options) {
+            let echarts = require('echarts');
+            let myChart = echarts.init(document.getElementById(id));
+            myChart.setOption(options);
+        },
+        change1 (text){
+          if(text=='change'){
+            this.barOption.series[0].data = [6,16,26,36,46,56];
+          }else{
+            this.barOption.series[0].data = [5, 20, 36, 10, 10, 20];
+          }
+        },
+        change2 (text){
+          if(text=='change'){
+            this.lineOption.series[0].data = [600,1600,2600,3600,600,500,3400];
+          }else{
+            this.lineOption.series[0].data = [820, 932, 901, 934, 1290, 1330, 1320];
+          }
+        }
+      },
+      watch: {
+        barOption:{
+          handler(newVal,oldVal){
+            // console.log(newVal,oldVal)
+            if(newVal){
+              this.setOption('barChart',newVal)
+            }else{
+              this.setOption('barChart',oldVal)
+            }
+          },
+          deep:true,
+        },
+        lineOption:{
+          handler(newVal,oldVal){
+            // console.log(newVal,oldVal)
+            if(newVal){
+              this.setOption('lineChart',newVal)
+            }else{
+              this.setOption('lineChart',oldVal)
+            }
+          },
+          deep:true,
         }
       }
     }
@@ -193,5 +167,8 @@
     height: 500px;
     // width: 100%;
   }
-
+  .btn{
+    margin: 10px;
+    cursor: pointer;
+  }
 </style>
