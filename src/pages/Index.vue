@@ -17,6 +17,7 @@
           </div>
         </el-col>
       </el-row>
+      <button class="btn" @click="go">go to BasicContainer</button>
       <el-row :gutter="20">
         <el-col :span="12">
           <button @click="change1('change')" class="btn">change1</button>
@@ -41,6 +42,7 @@
       name: "Index",
       data(){
         return{
+          id: 17625931662,
           resizeFun:null,
           barOption:{
             title: {
@@ -118,6 +120,21 @@
           }else{
             this.lineOption.series[0].data = [820, 932, 901, 934, 1290, 1330, 1320];
           }
+        },
+        // 跳转页面
+        go (){
+          // this.$router.push({
+          //   path: './BasicContainer',
+          //   query: {
+          //     id:this.id,
+          //   }
+          // })
+          this.$router.push({
+            name: 'BasicContainer',
+            params: {
+              id:this.id,
+            }
+          })
         }
       },
       watch: {

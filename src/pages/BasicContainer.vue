@@ -2,7 +2,9 @@
   <div class="wrap">
     <div id="pieChart" class="pieChart"></div>
     <div class="remdiv"> 
-      測試rem是否生效
+      接收页面传参
+      {{this.$route.query}}
+      {{this.$route.params}}
     </div>
   </div>
 </template>
@@ -19,12 +21,15 @@ export default {
         { value: 234, name: "应交微信" },
         { value: 135, name: "应交信用卡" },
         { value: 1548, name: "应交其他" }
-      ]
+      ],
+      params:{},
+      // props:['id'],
     };
   },
   mounted() {
     this.ringDrag();
-    // this.resizeFun();
+    // console.log(this.$route.query);
+    console.log(this.$route.params.id);
   },
   methods: {
     ringDrag() {

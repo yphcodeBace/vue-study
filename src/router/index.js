@@ -23,6 +23,7 @@ let routes = [
     component: BasicLayout
   },
   {
+    // path: '/BasicContainer/:id',
     path: '/BasicContainer',
     name: 'BasicContainer',
     component: BasicContainer
