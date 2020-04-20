@@ -14,6 +14,10 @@
           <i class="el-icon-menu"></i>
           <span slot="title">首页</span>
         </el-menu-item>
+        <el-menu-item index="Login">
+          <i class="el-icon-user"></i>
+          <span slot="title">登陆</span>
+        </el-menu-item>
         <el-submenu v-for="item in menu" :index="item.id" :key="item.id">
           <template slot="title">
             <span><i :class="item.classname"></i>{{item.name}}</span>

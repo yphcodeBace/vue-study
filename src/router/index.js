@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/pages/Index'
+import Login from '@/pages/Login'
 import BasicLayout from '@/pages/BasicLayout'
 import BasicContainer from '@/pages/BasicContainer'
 import FormRadio from '@/pages/FormRadio'
@@ -16,6 +17,10 @@ let routes = [
     path: '/Index',
     name: 'Index',
     component: Index
+  },{
+    path: '/Login',
+    name: 'Login',
+    component: Login
   },
   {
     path: '/BasicLayout',
