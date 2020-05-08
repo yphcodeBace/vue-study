@@ -3,7 +3,7 @@
       <el-row :gutter="20">
         <el-col :span="8">
           <div class="grid-content bg-purple">
-            <span>姓名:</span><span>燕培浩</span>
+            <span>姓名:</span><span>燕培浩{{this.$store.state.data}}</span>
           </div>
         </el-col>
         <el-col :span="8">
@@ -158,7 +158,9 @@
               this.setOption('lineChart',oldVal)
             }
           },
-          deep:true,
+          deep:true, //deep属性（深度监听，常用于对象下面属性的改变）
+          
+          // immediate: true, // 代表在wacth里声明了lineOption这个方法之后立即先去执行handler方法
         }
       }
     }

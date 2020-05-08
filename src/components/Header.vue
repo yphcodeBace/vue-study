@@ -3,17 +3,19 @@
     <el-col :span="24">
     <div class="head-wrap"><i class="el-icon-bell"></i>
       <span>个人信息管理平台</span>
+      <el-select @change="selectChange" v-model="value" placeholder="请选择">
+        <el-option
+          v-for="item in options"
+          :key="item.value"
+          :label="item.label"
+          :value="item">
+        </el-option>
+      </el-select>
       <div class="right">
         <span>用户名:</span>
         <span>燕培浩</span>
         <span style="cursor: pointer">退出<i class="el-icon-circle-close"></i></span>
       </div>
-<!--      {{this.$store.state.count}}-->
-<!--      <button @click="add()">加1</button>-->
-<!--      <span>layout布局</span>-->
-<!--      <span>Container 布局容器</span>-->
-<!--      <span>Radio 单选框</span>-->
-<!--      <span>Checkbox 多选框</span>-->
     </div>
     </el-col>
   </el-row>
@@ -24,6 +26,21 @@
 
   export default {
     // ...
+    data(){
+      return {
+        options: [{
+          value: '1',
+          label: 'storeData1'
+        }, {
+          value: '2',
+          label: 'storeData2'
+        }, {
+          value: '3',
+          label: 'storeData3'
+        }],
+        value: ''
+      }
+    },
     computed: {
       doneTodosCount () {
         return this.$store.getters.doneTodosCount
@@ -43,6 +60,9 @@
     methods:{
       add:()=>{
         store.commit('increment');
+      },
+      selectChange(event){
+        store.commit('changeData',event.label);
       }
 
     },

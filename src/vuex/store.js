@@ -28,6 +28,9 @@ export default new Vuex.Store({
       // 变更状态
       state.count++
     },
+    changeData (state,selected){
+      state.data = selected
+    }
   },
   actions: {
     increment (context) {
