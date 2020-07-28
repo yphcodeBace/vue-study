@@ -4,7 +4,7 @@
     <el-row :gutter="20">
       <el-col :span="24">
         <div id="pieChart" class="grid-content bg-purple chart">
-
+          测试
         </div>
       </el-col>
     </el-row>
