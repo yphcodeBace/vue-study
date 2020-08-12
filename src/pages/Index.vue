@@ -39,7 +39,6 @@
 
 <script>
     export default {
-      // 测试git
       name: "Index",
       data(){
         return{
