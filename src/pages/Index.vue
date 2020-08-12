@@ -39,6 +39,7 @@
 
 <script>
     export default {
+      // 测试git
       name: "Index",
       data(){
         return{
@@ -159,7 +160,7 @@
             }
           },
           deep:true, //deep属性（深度监听，常用于对象下面属性的改变）
-          
+
           // immediate: true, // 代表在wacth里声明了lineOption这个方法之后立即先去执行handler方法
         }
       }
