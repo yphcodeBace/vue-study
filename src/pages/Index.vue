@@ -45,6 +45,7 @@
           id: 17625931662,
           resizeFun:null,
           barOption:{
+            backgroundColor: 'transparent',
             title: {
               text: 'ECharts 入门示例'
             },
@@ -184,6 +185,7 @@
     border: 1px solid darkgrey;
     background: white;
     height: 500px;
+    background-image: url("../assets/bg.jpg");
     // width: 100%;
   }
   .btn{
