@@ -1,11 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/pages/Index'
-import Login from '@/pages/Login'
-import BasicLayout from '@/pages/BasicLayout'
-import BasicContainer from '@/pages/BasicContainer'
-import FormRadio from '@/pages/FormRadio'
-import FormCheckbox from '@/pages/FormCheckbox'
+// import Index from '@/pages/Index'
+// import Login from '@/pages/Login'
+// import BasicLayout from '@/pages/BasicLayout'
+// import BasicContainer from '@/pages/BasicContainer'
+// import FormRadio from '@/pages/FormRadio'
+// import FormCheckbox from '@/pages/FormCheckbox'
+
+// 路由懒加载
+const Index = () => import('@/pages/Index')
+const Login = () => import('@/pages/Login')
+const BasicLayout = () => import('@/pages/BasicLayout')
+const BasicContainer = () => import('@/pages/BasicContainer')
+const FormRadio = () => import('@/pages/FormRadio')
+const FormCheckbox = () => import('@/pages/FormCheckbox')
 
 // import menus from '@/config/menu-config'
 
